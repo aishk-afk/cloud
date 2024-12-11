@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="banner.css">
+
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Flexbox container for content */
+        .content-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Text section */
+        .text {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        /* Image section */
+        .image {
+            flex: 0 0 auto;
+        }
+
+        .image img {
+            border-radius: 15px;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(50px); /* Position below starting point */
+            transition: opacity 1s ease, transform 1s ease;
+            transition-delay: 0.4s; 
+        }
+
+        .image.visible img {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Float In Animation for All Paragraphs */
+        p {
+            font-size: 22px;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(50px); /* Position below starting point */
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        p.visible {
+            opacity: 1;
+            transform: translateY(0); /* Move to the normal position */
+        }
+
+        /* Orange Box Styling */
+        .orange-box {
+            background-color: #f7d8c4;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 90%;
+            margin: 20px auto;
+            table-layout: auto;
+            border-spacing: 20px;
+        }
+
+        table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* Image styling for large images at the bottom */
+        .pic img {
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+        /* Delayed animation for the images */
+    .table-img1.visible img {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.2s; /* No delay for the first image */
+    }
+
+    .table-img2.visible img {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.8s; /* Delay for the second image */
+    }
+
+    .table-img3.visible img {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 1.5s; /* Delay for the third image */
+    }
+    .spaced {
+        margin-bottom: 10em;
+    }
+        
+    </style>
+</head> 
+
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg banner">
+        <div class="container-fluid">
+            <div class="nav-container">
+                <a class="nav-link" href="menu.html">Menu</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <div class="logo-container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="cloud.png" alt="Logo" width="100em" height="50em">
+                    </a>
+                </div>
+                <a class="nav-link" href="media.html">Media</a>
+                <a class="nav-link" href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="content-container">
+        <!-- Text Content -->
+        <div class="text">
+            <p class="scroll-fade" style="margin-left: 50px;">Cloud soft treats is a new and unique frozen yogurt brand in the Philippines. 
+                <br> They have officially opened their doors at SM Mandaluyong, offering a twist 
+                <br>on traditional frozen yogurt. Their mission is to provide a light, icy, dreamy, 
+                <br>and delicious treat that is enjoyed fresh.</p>
+        </div>
+
+        <!-- Image Content -->
+        <div class="image scroll-fade">
+            <img src="1st part.jpg" alt="Cloud Soft Treats" width="400px">
+        </div>
+    </div>
+
+    <div class="spaced"></div>
+    <!-- Orange Box with text -->
+    <div class="orange-box">
+        <p class="scroll-fade">The founders of Cloud Soft Treats envisioned a place where customers could create their signature treats with a variety of premium toppings and flavors. They emphasize sustainability by avoiding the use of plastics in their packaging, aligning with a growing trend towards eco-friendly practices.</p>
+    </div>
+
+    <!-- Additional Images in Table -->
+    <table>
+        <tr>
+            <td class="image scroll-fade table-img1"><img src="2nd part.jpg" width="250em" height="340em" alt="Image 2"></td>
+            <td class="image scroll-fade table-img2" ><img src="3rd part.jpg" width="250em" height="340em" alt="Image 3"></td>
+            <td class=" image scroll-fade table-img3"><img src="4th part.jpg" width="230em" alt="Image 4"></td>
+        </tr>
+    </table>
+
+    <!-- Final Image at the bottom -->
+    <div class="pic scroll-fade">
+        <img src="your icy.png" alt="Your Icy" style="margin-left: 160px;" >
+    </div>
+
+    <script>
+        // Function to check if an element is in the viewport
+        function isInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Add the 'visible' class when elements are in the viewport
+        function handleScroll() {
+            const elements = document.querySelectorAll('.scroll-fade');
+            elements.forEach(element => {
+                if (isInViewport(element)) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Run the scroll handler when the page loads or the user scrolls
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+    </script>
+
+</body>
+
+</html>

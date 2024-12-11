@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact Us</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<link rel="stylesheet" href="banner.css">
+
+<style>
+ .container {
+ width: 60%;
+ margin: auto;
+ padding: 20px;
+ border: 1px solid #FFFFFF;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(255, 182, 193, 1);
+ overflow: hidden;
+ background-color: white;
+ }
+ .form-field {
+ margin-bottom: 10px;
+ }
+ .form-field label {
+ display: block;
+ margin-bottom: 5px;
+ }
+ .form-field input, .form-field textarea {
+ width: 100%;
+ padding: 10px;
+ border: 1px solid #cccccc;
+ border-radius: 5px;
+ box-sizing: border-box;
+ }
+ .form-field textarea {
+ max-width: 100%;
+ }
+ .adjust-button {
+ display: inline-block;
+ margin-top: 10px;
+ padding: 10px 20px;
+ background-color: black;
+ color: white;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ }
+
+
+ 
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg banner">
+        <div class="container-fluid">
+            <div class="nav-container">
+                <a class="nav-link" href="menu.html">Menu</a>
+                <a class="nav-link" href="about.html">About Us</a>
+                <div class="logo-container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="cloud.png" alt="Logo" width="100em" height="50em" class="d-inline-block align-text-top">
+                    </a>
+                </div>
+                <a class="nav-link" href="media.html">Media</a>
+                <a class="nav-link" href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+        
+        </div>
+ <h1>Contact Us </h1>
+ <p style="font-family: Caibri;"> We'd like to hear from you! Reach out to us for any questions or feedback.
+ <div class="container">
+ <form id="suggestionForm">
+    <div class="form-field">
+        <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-field">
+        <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="3"></textarea>
+ <button type="submit" class="adjust-button"> Submit </button>
+ </div>
+ </form>
+ </div>
+    <script>
+    document.getElementById('suggestionForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const formData = new FormData(event.target); 
+        const data = {}; 
+        formData.forEach((value, key) => { 
+            data[key] = value; 
+        }); 
+        console.log('Form data submitted:', data);  
+    });
+</script>
+ 
+<h1> Operating Hours </h1>
+ <p> We are open Mondays - Sundays from 10:00 AM to 10:00 PM. 
+ 
+<h1> Email Address </h1>
+ <p> cloud.soft.treats@gmail.com
+
+</body>
+</html> 
